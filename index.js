@@ -1,4 +1,4 @@
-const io = require('socket.io')(8000);
+const io = require('socket.io')((http,  { cors: { origin: '*' } }));
 
 const users = {};
 io.on('connection', socket => {
