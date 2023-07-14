@@ -1,11 +1,9 @@
-const io = require('socket.io')(8000);
-// const express = require('express');
-// const app = express();
-// const server = require('http').createServer(app);
-// const io = require('socket.io')(server);
-// const cors = require('cors');
-
-// app.use(cors());
+const io = require('socket.io')(8000, {
+    cors: {
+      origin: '*',
+      methods: ['GET', 'POST'],
+    },
+  });
 
 const users = {};
 io.on('connection', socket => {
